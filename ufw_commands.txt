@@ -1,0 +1,45 @@
+# Install and enable UFW
+
+- sudo apt update
+
+- sudo apt install ufw -y
+
+- sudo ufw enable
+
+---
+
+# Check current firewall rules
+
+- sudo ufw status numbered
+
+---
+
+# Block port 23 (Telnet)
+
+- sudo ufw deny 23
+
+---
+
+# Verify block using nmap
+
+- sudo nmap -p 23 127.0.0.1
+
+---
+
+# Allow SSH port 22
+
+- sudo ufw allow 22
+
+---
+
+# Delete deny rule if needed
+
+- sudo ufw status numbered
+
+- sudo ufw delete [rule number]
+
+---
+
+# Disable UFW
+
+sudo ufw disable
